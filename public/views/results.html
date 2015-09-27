@@ -1,0 +1,48 @@
+<div class="jumbotron text-center">
+
+	<!-- Field Finder Logo -->
+	<div id="img_container">
+		<img id="logo" src = "images/logo200.png">
+	</div>
+
+	<p>Find the paintball field for you:</p>
+
+	<!-- Facebook log in button -->
+	<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+
+
+	<!-- Input for zip code Search -->
+	<div class="form-inline">
+	    <input class="form-control" type="text" placeholder="Search by Zip code" ng-model="query" id="query">
+	        
+	    <button class="btn btn-primary" ng-click="search()" id="search">search</button>
+	    <div>{{ message }}</div>
+	</div>
+
+
+	<h1>Results</h1>
+
+	<table class='table'>
+		<thead>
+			<tr>
+				<th>Paint Ball Field</th>
+				<th>Street Address</th>
+				<th>City</th>
+				<th>State</th>
+				<th>Zip Code</th>
+				<th>Phone Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="result in results track by $index">
+				<td>{{ result.name }}</td>
+				<td>{{ result.address }}</td>
+				<td>{{ result.city }}</td>
+				<td>{{ result.state }}</td>
+				<td>{{ result.zip }}</td>
+				<td>{{ result.phone }}</td>
+				<td><a href="/details/{{result._id}}">Details</a></td>	
+			</tr>
+		</tbody>
+	</table>
+</div>

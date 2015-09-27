@@ -1,0 +1,43 @@
+<!-- Details page will have details about a field -->
+<!-- Current weather conditions will be posted -->
+<!-- Comments about field will be shown -->
+<!-- If logged into FB, will be able to post a comment -->
+<script src="js/weather.js"></script>
+<div class="jumbotron text-center">
+	<h1> {{ result.name }} Details</h1>
+	
+		Name: {{ result.name }}<br/>
+		Address: {{ result.address }}<br/>
+		City: {{ result.city }}<br/>
+		State: {{ result.state }}<br/>
+		Zip: {{ result.zip }}<br/>
+		Phone Number: {{ result.phone }}<br/>
+				
+	<!-- div for adding favorites will toggle visibility based on facebook log in status -->
+	<div id="fav">
+		<button>
+			<span id="star" class="glyphicon glyphicon-star" aria-hidden="true"></span>
+			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+		</button>
+	</div>
+
+	<!-- weather info will go here -->
+	<div id="content"></div>
+
+	<!-- Facebook log in button -->
+	<div  class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" >Log into Facebook</div>
+
+
+	<!-- div to leave comments will toggle visibility based on facebook log in status -->
+	<div id="lvComment">
+		<form>
+			Leave a comment about this field:
+			<input type="text" name="comment">
+			<button class="btn btn-lg btn-primary btn-block" id="commentButton">Submit</button>
+		</form>	
+	</div>
+
+	<!-- comments about field will go here -->
+
+
+</div>
